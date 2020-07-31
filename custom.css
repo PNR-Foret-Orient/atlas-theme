@@ -1,0 +1,7 @@
+/* Insert your custom override CSS in this file */
+ 
+:root {
+
+  --main-color: #95579a;
+  --second-color: #c674cd;
+}
