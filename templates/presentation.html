@@ -34,43 +34,23 @@
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-          <div class="item active" style="background-image: url(http://biodiversite.ecrins-parcnational.fr/medias/60686_364_Hermine_blanche_en_pelage_dhiver.jpg) ; background-size: cover; background-position: center center;">
+          <div class="item active" style="background-image: url({{url_for('static', filename='custom/images/placeholder.jpg') }}) ; background-size: cover; background-position: center center;">
             <div class="container">
               <div class="carousel-caption">
-                <h1>Atlas de la faune vertébrée et invertébrée</h1>
-                <p>Découvrez plus de 300.000 observations de 2.000 espèces</p>
-		  <p><a class="btn btn-lg btn-default" href="#faune" role="button">En savoir plus</a></p>
+                <h1>XXXXX</h1>
+                <p>xxxxxx</p>
+		            <p><a class="btn btn-lg btn-default" href="#" role="button">xxxxxx</a></p>
               </div>
             </div>
           </div>
-          <div class="item" style="background-image: url(http://biodiversite.ecrins-parcnational.fr/medias/92486_712_Lis_de_Pompone.jpg) ; background-size: cover; background-position: center center;">
+          <div class="item" style="background-image: url({{url_for('static', filename='custom/images/placeholder.jpg') }}) ; background-size: cover; background-position: center center;">
             <div class="container">
               <div class="carousel-caption">
-                <h1>Atlas de la flore</h1>
-                <p>Parcourez les fiches espèces des 2.000 espèces</p>
-                <p><a class="btn btn-lg btn-default" href="#flore" role="button">En savoir plus</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="item" style="background-image: url({{url_for('static', filename='custom/images/01-observateurs.jpg') }}) ; background-size: cover; background-position: top center;">
-            <div class="container">
-              <div class="carousel-caption">
-                <h1>40 ans d'observations scientifiques</h1>
-                <p>Connaissance, suivi, gestion et protection de la biodiversité</p>
-                <p><a class="btn btn-lg btn-default" href="#scientifique" role="button">En savoir plus</a></p>
-              </div>
-            </div>
-          </div>
-           <div class="item" style="background-image: url({{url_for('static', filename='custom/images/02-photographes.jpg') }}) ; background-size: cover; background-position: bottom center;">
-            <div class="container">
-              <div class="carousel-caption">
-                <h1>Des centaines de photos</h1>
-                <p>Prises par les agents du parc national au quotidien</p>
-                <p><a class="btn btn-lg btn-default" href="{{url_for('main.photos')}}" role="button">Visitez la galerie</a></p>
+                <h1>X</h1>
+                <p>xxxxxx</p>
+                <p><a class="btn btn-lg btn-default" href="#flore" role="button">xxxxxx</a></p>
               </div>
             </div>
           </div>
@@ -85,7 +65,7 @@
         </a>
       </div>
 
-      <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="500" id="sommaire">
+      <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="500" data-offset-bottom="0" id="sommaire">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#general">Général</a></li>
           <li><a href="#patrimoine">Patrimoine</a></li>
