@@ -36,6 +36,7 @@ body {
 }
 #page {
   padding-left: 80px; /* sidebar + 10px padding */
+  margin-top: 20px; /* same as panel margin-bottom */
 }
 #carte {
   padding-left: 70px; /* for sidebar */
