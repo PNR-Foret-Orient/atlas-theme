@@ -45,4 +45,5 @@ body {
 }
 .carte {
   height: 100%;
+  overflow: hidden;
 }
