@@ -27,13 +27,18 @@ body {
 #sideBar {
   margin-top: 0;
   width: 70px;
-  padding-top: 20px;
+  padding-top: 20px; /* allow for extension of logo */
 }
 .logoStructure {
   height: auto;
-  width: 70px;
+  width: 70px; /* same as sidebar */
   padding-right: 0;
 }
 #page {
-  padding-left: 80px;
+  padding-left: 80px; /* sidebar + 10px padding */
+}
+#carte {
+  padding-left: 70px; /* for sidebar */
+  padding-right: 0;
+  margin-top: 0;
 }
