@@ -23,10 +23,20 @@ body {
   font-size: inherit;
   line-height: inherit;
 }
-#sideBar {
-  margin-top: 0;
-}
 .btn-primary {
   background-color: #95579a;
   border-color: #c674cd;
+}
+#sideBar {
+  margin-top: 0;
+  width: 70px;
+  padding: 15px 0;
+}
+.logo-structure {
+  height: auto;
+  width: 70px;
+  padding-right: 0;
+}
+#page {
+  padding-left: 80px;
 }
