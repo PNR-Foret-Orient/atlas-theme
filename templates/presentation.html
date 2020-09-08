@@ -1,238 +1,228 @@
 <!-- Réalisée à partir de https://startbootstrap.com/template-overviews/one-page-wonder/ et http://getbootstrap.com/examples/carousel/ -->
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Présentation de l'atlas | {{configuration.NOM_APPLICATION}} - {{configuration.STRUCTURE}}</title>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Présentation de l'atlas | {{configuration.NOM_APPLICATION}} - {{configuration.STRUCTURE}}</title>
+    <!-- Jquery -->
+    <script type=text/javascript src="{{url_for('static', filename='lib/jquery-1.12.4.min.js') }}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='lib/jquery-ui.min.js') }}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='lib/jquery-ui.css') }}" />
 
-  <!-- Jquery -->
-  <script type=text/javascript src="{{url_for('static', filename='lib/jquery-1.12.4.min.js') }}"></script>
-  <script type=text/javascript src="{{url_for('static', filename='lib/jquery-ui.min.js') }}"></script>
-  <link rel="stylesheet" href="{{url_for('static', filename='lib/jquery-ui.css') }}" />
+    <!-- Bootstrap -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="{{url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}"></link>
+    <script type=text/javascript src="{{url_for('static', filename='lib/bootstrap/js/bootstrap.min.js') }}"></script>
 
-  <!-- Bootstrap -->
-  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <!-- Atlas -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='custom/images/favicon.ico') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/atlas.css') }}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/static_pages.css') }}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='custom/custom.css') }}" />
+  </head>
+  <body data-spy="scroll" data-target="#sommaire">
+    {% include 'templates/navbar.html' %}
 
-  <link rel="stylesheet" href="{{url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}">
-  </link>
-  <script type=text/javascript src="{{url_for('static', filename='lib/bootstrap/js/bootstrap.min.js') }}"></script>
-
-  <!-- Atlas -->
-  <link rel="shortcut icon" href="{{ url_for('static', filename='custom/images/favicon.ico') }}">
-  <link rel="stylesheet" href="{{url_for('static', filename='css/atlas.css') }}" />
-  <link rel="stylesheet" href="{{url_for('static', filename='css/static_pages.css') }}" />
-  <link rel="stylesheet" href="{{url_for('static', filename='custom/custom.css') }}" />
-
-</head>
-
-<body data-spy="scroll" data-target="#sommaire">
-  {% include 'templates/navbar.html' %}
-
-  <div id="sideBar">
+    <div id="sideBar">
     {% include 'templates/sideBar.html' %}
-  </div>
-  <div class="container-fluid" id="page">
+    </div>
+
+    <div class="container-fluid" id="page">
 
 
-    <!-- Carousel
-            ================================================== -->
-    <!--<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: -15px; margin-bottom: 0px;">
-              <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-              </ol>
-              <div class="carousel-inner" role="listbox">
-                <div class="item active" style="background-image: url(http://biodiversite.ecrins-parcnational.fr/medias/60686_364_Hermine_blanche_en_pelage_dhiver.jpg) ; background-size: cover; background-position: center center;">
-                  <div class="container">
-                    <div class="carousel-caption">
-                      <h1>Atlas de la faune vertébrée et invertébrée</h1>
-                      <p>Découvrez plus de 300.000 observations de 2.000 espèces</p>
-					  <p><a class="btn btn-lg btn-default" href="#faune" role="button">En savoir plus</a></p>
+      <!-- Carousel
+              ================================================== -->
+      <!--<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: -15px; margin-bottom: 0px;">
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                  <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active" style="background-image: url(http://biodiversite.ecrins-parcnational.fr/medias/60686_364_Hermine_blanche_en_pelage_dhiver.jpg) ; background-size: cover; background-position: center center;">
+                    <div class="container">
+                      <div class="carousel-caption">
+                        <h1>Atlas de la faune vertébrée et invertébrée</h1>
+                        <p>Découvrez plus de 300.000 observations de 2.000 espèces</p>
+  					  <p><a class="btn btn-lg btn-default" href="#faune" role="button">En savoir plus</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item" style="background-image: url(http://biodiversite.ecrins-parcnational.fr/medias/92486_712_Lis_de_Pompone.jpg) ; background-size: cover; background-position: center center;">
+                    <div class="container">
+                      <div class="carousel-caption">
+                        <h1>Atlas de la flore</h1>
+                        <p>Parcourez les fiches espèces des 2.000 espèces</p>
+                        <p><a class="btn btn-lg btn-default" href="#flore" role="button">En savoir plus</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item" style="background-image: url({{url_for('static', filename='custom/images/01-observateurs.jpg') }}) ; background-size: cover; background-position: top center;">
+                    <div class="container">
+                      <div class="carousel-caption">
+                        <h1>40 ans d'observations scientifiques</h1>
+                        <p>Connaissance, suivi, gestion et protection de la biodiversité</p>
+                        <p><a class="btn btn-lg btn-default" href="#scientifique" role="button">En savoir plus</a></p>
+                      </div>
+                    </div>
+                  </div>
+                   <div class="item" style="background-image: url({{url_for('static', filename='custom/images/02-photographes.jpg') }}) ; background-size: cover; background-position: bottom center;">
+                    <div class="container">
+                      <div class="carousel-caption">
+                        <h1>Des centaines de photos</h1>
+                        <p>Prises par les agents du parc national au quotidien</p>
+                        <p><a class="btn btn-lg btn-default" href="{{url_for('main.photos')}}" role="button">Visitez la galerie</a></p>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="item" style="background-image: url(http://biodiversite.ecrins-parcnational.fr/medias/92486_712_Lis_de_Pompone.jpg) ; background-size: cover; background-position: center center;">
-                  <div class="container">
-                    <div class="carousel-caption">
-                      <h1>Atlas de la flore</h1>
-                      <p>Parcourez les fiches espèces des 2.000 espèces</p>
-                      <p><a class="btn btn-lg btn-default" href="#flore" role="button">En savoir plus</a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item" style="background-image: url({{url_for('static', filename='custom/images/01-observateurs.jpg') }}) ; background-size: cover; background-position: top center;">
-                  <div class="container">
-                    <div class="carousel-caption">
-                      <h1>40 ans d'observations scientifiques</h1>
-                      <p>Connaissance, suivi, gestion et protection de la biodiversité</p>
-                      <p><a class="btn btn-lg btn-default" href="#scientifique" role="button">En savoir plus</a></p>
-                    </div>
-                  </div>
-                </div>
-                 <div class="item" style="background-image: url({{url_for('static', filename='custom/images/02-photographes.jpg') }}) ; background-size: cover; background-position: bottom center;">
-                  <div class="container">
-                    <div class="carousel-caption">
-                      <h1>Des centaines de photos</h1>
-                      <p>Prises par les agents du parc national au quotidien</p>
-                      <p><a class="btn btn-lg btn-default" href="{{url_for('main.photos')}}" role="button">Visitez la galerie</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Précédent</span>
-              </a>
-              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Suivant</span>
-              </a>
-            </div>-->
-    <!-- /.carousel -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Précédent</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Suivant</span>
+                </a>
+              </div>-->
+      <!-- /.carousel -->
 
 
-    <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="500" id="sommaire">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#general">Général</a></li>
-        <li><a href="#patrimoine">Patrimoine</a></li>
-        <li><a href="#gestion">Gestion du patrimoine</a></li>
-        <li><a href="#cadreReglementaire">Cadre réglementaire</a></li>
-        <li><a href="#geonature">GeoNature</a></li>
-      </ul>
-    </nav>
+      <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="500" id="sommaire">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#general">Général</a></li>
+          <li><a href="#patrimoine">Patrimoine</a></li>
+          <li><a href="#gestion">Gestion du patrimoine</a></li>
+          <li><a href="#cadreReglementaire">Cadre réglementaire</a></li>
+          <li><a href="#geonature">GeoNature</a></li>
+        </ul>
+      </nav>
 
-    <div class="container presentation">
-      <section>
-        <h2 id="general">L’Observatoire de la biodiversité du Parc</h2>
-        <p class="lead">Cet atlas a pour but de partager la connaissance acquises depuis de nombreuses année par le Parc et ses partenaire afin de montrer au plus grand nombre la richesse de ce territoire. Il vous présente des observations réalisées
-          dans le cadre de différents protocoles scientifiques et proviennent de sources multiples.</p>
-        <p class="lead">Il ne s'agit pas d'un inventaire exhaustif, ni d'une répartition complète des espèces sur le territoire. De plus, afin de garantir les règles en matière de diffusion de certaines données sensibles, il a été définit un niveau
-          de dégradation géographique à la maille de 10km par 10km.</p>
-        <p class="lead">Cette base d’informations sur la faune et la flore du Parc de la Forêt d’Orient avec leur répartition et des photos permettent de mieux les connaître.</p>
-        <a class="btn btn-default btn-lg" href="http://www.pnr-foret-orient.fr/" role="button">Découvrez la nature en Forêt d’Orient !</a>
-      </section>
+      <div class="container presentation">
+        <section>
+          <h2 id="general">L’Observatoire de la biodiversité du Parc</h2>
+          <p class="lead">Cet atlas a pour but de partager la connaissance acquises depuis de nombreuses année par le Parc et ses partenaire afin de montrer au plus grand nombre la richesse de ce territoire. Il vous présente des observations réalisées
+            dans le cadre de différents protocoles scientifiques et proviennent de sources multiples.</p>
+          <p class="lead">Il ne s'agit pas d'un inventaire exhaustif, ni d'une répartition complète des espèces sur le territoire. De plus, afin de garantir les règles en matière de diffusion de certaines données sensibles, il a été définit un niveau
+            de dégradation géographique à la maille de 10km par 10km.</p>
+          <p class="lead">Cette base d’informations sur la faune et la flore du Parc de la Forêt d’Orient avec leur répartition et des photos permettent de mieux les connaître.</p>
+          <a class="btn btn-default btn-lg" href="http://www.pnr-foret-orient.fr/" role="button">Découvrez la nature en Forêt d’Orient !</a>
+        </section>
 
-      <section>
-        <h2 id="patrimoine">Connaissance du patrimoine</h2>
-        <p>
-          De par ses richesses paysagères et sa situation privilégiée par rapport aux axes de migration, c’est un site de grand intérêt naturel reconnu nationalement et internationalement. Havre de paix pour la faune et la flore et faisant partie du paysage remarquable, la gestion de ces milieux fortement liés à l’activité humaines s’inscrit dans une démarche de sensibilisation, de protection et de valorisation initiée par le Parc depuis le début de son existence.
-        </p>
-        <p>
-          Suivre et comprendre le fonctionnement de ce réseaux d’espace naturels remarquables et la biodiversité associée fait partie des enjeux prioritaires de la Charte du Parc. L’Observatoire de la biodiversité s’inscrit dans un volonté d'organiser, de rendre accessibles et transparentes les données acquises par le Parc. Par la biais de l’Observatoire du territoire, outil évolutif et pluri-disciplinaire, destiné aux acteurs du territoire et aux élus, ces données fiables servent à analyser plus finement les dynamiques du territoire et à fonder une stratégie de développement.
-        </p>
-      </section>
+        <section>
+          <h2 id="patrimoine">Connaissance du patrimoine</h2>
+          <p>
+            De par ses richesses paysagères et sa situation privilégiée par rapport aux axes de migration, c’est un site de grand intérêt naturel reconnu nationalement et internationalement. Havre de paix pour la faune et la flore et faisant partie du paysage remarquable, la gestion de ces milieux fortement liés à l’activité humaines s’inscrit dans une démarche de sensibilisation, de protection et de valorisation initiée par le Parc depuis le début de son existence.
+          </p>
+          <p>
+            Suivre et comprendre le fonctionnement de ce réseaux d’espace naturels remarquables et la biodiversité associée fait partie des enjeux prioritaires de la Charte du Parc. L’Observatoire de la biodiversité s’inscrit dans un volonté d'organiser, de rendre accessibles et transparentes les données acquises par le Parc. Par la biais de l’Observatoire du territoire, outil évolutif et pluri-disciplinaire, destiné aux acteurs du territoire et aux élus, ces données fiables servent à analyser plus finement les dynamiques du territoire et à fonder une stratégie de développement.
+          </p>
+        </section>
 
-      <section>
-        <h2 id="gestion">Gestion du patrimoine</h2>
-        <p>
-          La valeur patrimoniale du Parc est reconnue au niveau international (site Ramsar des Étangs de la Champagne humide), européen (46 % du territoire concerné par le réseau Natura 2000) et national, a motivé la mise en œuvre de mesures de protection et de gestion réglementaires et contractuelles.
-        </p>
-      </section>
+        <section>
+          <h2 id="gestion">Gestion du patrimoine</h2>
+          <p>
+            La valeur patrimoniale du Parc est reconnue au niveau international (site Ramsar des Étangs de la Champagne humide), européen (46 % du territoire concerné par le réseau Natura 2000) et national, a motivé la mise en œuvre de mesures de protection et de gestion réglementaires et contractuelles.
+          </p>
+        </section>
 
-      <section>
-        <h2 id="cadreReglementaire">Cadre réglementaire</h2>
-        <h3>Quelques mots sur le SINP Grand-Est</h3>
-        <p>
-          Les objectifs du Système d’Information sur la Nature et les Paysages sont de structurer les connaissances sur la biodiversité afin de favoriser une synergie entre les acteurs pour la production, la gestion, le traitement, la valorisation et la diffusion des données sur la nature et les paysages.
-        </p>
-        <p>
-          Le format standard régional doit être utilisé par les producteurs ou gestionnaires de données qui fournissent des données au SINP Grand Est. Il peut s’agir de données naturalistes acquises par une structure dans le cadre d’un financement de l’Etat obtenu suite à la passation d’un marché public. Il peut s’agir également de données issues des bilans exigés dans le cadre des Arrêtés de Dérogation Espèces Protégées.
-        </p>
-        <p>
-          Le Parc naturel régional de la Forêt d’Orient s’est engagé à produire et à partager des données d’observations standardisées comprenant les attributs compatibles avec le SINP régional et se doit de les diffuser sans restriction d’accès, sauf pour les données dites sensibles.
-        </p>
-        <a class="btn btn-default" href="http://www.grand-est.developpement-durable.gouv.fr/systeme-d-information-sur-la-nature-et-les-r216.html" role="button">Voir le SINP Grand Est</a>
-        <h3>Les données sensibles</h3>
-        <p>
-          Les atteintes à la biodiversité résultent généralement d'une méconnaissance de ce patrimoine et il est donc dans l'intérêt général de communiquer largement les informations sur sa localisation. Les données sensibles constituent une exception. Elles sont définies par le protocole du SINP, en référence à l’article L.124‐4 du code de l’environnement, comme des données particulières qui ne doivent pas être largement diffusées pour éviter de porter atteintes aux éléments qu'elles concernent (espèce, habitat ou élément géologique).
-        </p>
-        <p>
-          Pour chaque espèce, un niveau de dégradation géographique est définie en fonction de certains critères (zone géographique, date de la donnée, période d’observation, autres critères) : maille 10 km par 10 km, commune, département.
-        </p>
-      </section>
+        <section>
+          <h2 id="cadreReglementaire">Cadre réglementaire</h2>
+          <h3>Quelques mots sur le SINP Grand-Est</h3>
+          <p>
+            Les objectifs du Système d’Information sur la Nature et les Paysages sont de structurer les connaissances sur la biodiversité afin de favoriser une synergie entre les acteurs pour la production, la gestion, le traitement, la valorisation et la diffusion des données sur la nature et les paysages.
+          </p>
+          <p>
+            Le format standard régional doit être utilisé par les producteurs ou gestionnaires de données qui fournissent des données au SINP Grand Est. Il peut s’agir de données naturalistes acquises par une structure dans le cadre d’un financement de l’Etat obtenu suite à la passation d’un marché public. Il peut s’agir également de données issues des bilans exigés dans le cadre des Arrêtés de Dérogation Espèces Protégées.
+          </p>
+          <p>
+            Le Parc naturel régional de la Forêt d’Orient s’est engagé à produire et à partager des données d’observations standardisées comprenant les attributs compatibles avec le SINP régional et se doit de les diffuser sans restriction d’accès, sauf pour les données dites sensibles.
+          </p>
+          <a class="btn btn-default" href="http://www.grand-est.developpement-durable.gouv.fr/systeme-d-information-sur-la-nature-et-les-r216.html" role="button">Voir le SINP Grand Est</a>
+          <h3>Les données sensibles</h3>
+          <p>
+            Les atteintes à la biodiversité résultent généralement d'une méconnaissance de ce patrimoine et il est donc dans l'intérêt général de communiquer largement les informations sur sa localisation. Les données sensibles constituent une exception. Elles sont définies par le protocole du SINP, en référence à l’article L.124‐4 du code de l’environnement, comme des données particulières qui ne doivent pas être largement diffusées pour éviter de porter atteintes aux éléments qu'elles concernent (espèce, habitat ou élément géologique).
+          </p>
+          <p>
+            Pour chaque espèce, un niveau de dégradation géographique est définie en fonction de certains critères (zone géographique, date de la donnée, période d’observation, autres critères) : maille 10 km par 10 km, commune, département.
+          </p>
+        </section>
 
-      <section>
-        <h2 id="geonature">Fonctionnement de la plateforme GeoNature</h2>
-        <p>Le parc utilise l'application GeoNature pour saisir, gérer et diffuser des données faune et flore.</p>
-      </section>
+        <section>
+          <h2 id="geonature">Fonctionnement de la plateforme GeoNature</h2>
+          <p>Le parc utilise l'application GeoNature pour saisir, gérer et diffuser des données faune et flore.</p>
+        </section>
 
-      <hr class="featurette-divider">
-      <!--
-      <div class="row">
-        <div class="col-lg-4" id="fonctionnalites">
-          <img class="img-circle" src="{{url_for('static', filename='custom/images/03-determination.jpg') }}" alt="Generic placeholder image" width="140" height="140">
-          <h2>Fiches espèces</h2>
-          <p>Retrouvez la fiche de chaque espèce avec leur carte des observations, leur répartition altitudinale et mensuelle, ainsi que des descriptions, photos, vidéos, audios et liens complémentaires</p>
-          <p><a class="btn btn-default" href="/espece/61098" role="button">Exemple &raquo;</a></p>
+        <hr class="featurette-divider">
+        <!--
+        <div class="row">
+          <div class="col-lg-4" id="fonctionnalites">
+            <img class="img-circle" src="{{url_for('static', filename='custom/images/03-determination.jpg') }}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Fiches espèces</h2>
+            <p>Retrouvez la fiche de chaque espèce avec leur carte des observations, leur répartition altitudinale et mensuelle, ainsi que des descriptions, photos, vidéos, audios et liens complémentaires</p>
+            <p><a class="btn btn-default" href="/espece/61098" role="button">Exemple &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <img class="img-circle" src="{{url_for('static', filename='custom/images/04-loupe.jpg') }}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Fiches communes</h2>
+            <p>Découvrez les espèces observées sur chaque commune du parc national et affichez leurs observations sur la carte de la commune.</p>
+            <p><a class="btn btn-default" href="/commune/05090" role="button">Exemple &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <img class="img-circle" src="{{url_for('static', filename='custom/images/06-photographe.jpg') }}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Galerie photos</h2>
+            <p>Découvrez les photographies des différentes espèces, réalisées principalement par les agents du Parc national lors de leurs missions sur le terrain.</p>
+            <p><a class="btn btn-default" href="{{url_for('main.photos')}}" role="button">Parcourir &raquo;</a></p>
+          </div>
+        </div>-->
+
+        <!--<hr class="featurette-divider">
+
+        <div class="featurette" id="faune">
+          <img class="featurette-image img-circle img-responsive pull-right" src="{{url_for('static', filename='custom/images/09-faune.jpg') }}">
+          <h2 class="featurette-heading">Faune sauvage.<br /><span class="text-muted">Grandes et petites bêtes.</span>
+          </h2>
+          <p class="lead">
+            A quelques surprises près toujours possibles, la faune des vertébrés est aujourd'hui bien identifiée dans le Parc national des Écrins.
+            Il s'agit des mammifères, oiseaux, reptiles et amphibiens.
+          </p>
+          <p class="lead">
+            Il n'en va pas de même pour la faune des invertébrés. Il s'agit de ces étranges petites bêtes que sont les insectes, les escargots, les millepattes ou encore les araignées, coléoptères et écrevisses... Une quantité d'espèces aussi
+            impressionnante que pleine de promesses scientifiques.
+          </p>
+          <p class="lead">
+            <i>
+              « La base de données du Parc national n'est pas un inventaire.
+              Elle rassemble des informations collectées dans le cadre de différents protocoles scientifiques avec des objectifs différents.
+              De fait, le nombre important d'observations de bouquetins ne veut pas dire qu'il s'agit de l'espèce la plus présente dans le massif mais bien d'une espèces très suivie, notamment dans le cadre des réintroductions ! »
+            </i>
+          </p>
+          <p class="lead">
+            - Ludovic Imberdis, chargé de mission « faune » au Parc national des Écrins
+          </p>
+          <p class="lead">
+            Pour en savoir plus : <a href="http://www.ecrins-parcnational.fr/thematique/faune-sauvage" target="_blank">http://www.ecrins-parcnational.fr/thematique/faune-sauvage</a>.
+          </p>
         </div>
-        <div class="col-lg-4">
-          <img class="img-circle" src="{{url_for('static', filename='custom/images/04-loupe.jpg') }}" alt="Generic placeholder image" width="140" height="140">
-          <h2>Fiches communes</h2>
-          <p>Découvrez les espèces observées sur chaque commune du parc national et affichez leurs observations sur la carte de la commune.</p>
-          <p><a class="btn btn-default" href="/commune/05090" role="button">Exemple &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <img class="img-circle" src="{{url_for('static', filename='custom/images/06-photographe.jpg') }}" alt="Generic placeholder image" width="140" height="140">
-          <h2>Galerie photos</h2>
-          <p>Découvrez les photographies des différentes espèces, réalisées principalement par les agents du Parc national lors de leurs missions sur le terrain.</p>
-          <p><a class="btn btn-default" href="{{url_for('main.photos')}}" role="button">Parcourir &raquo;</a></p>
-        </div>
+
+
+        <hr class="featurette-divider">
+
       </div>-->
 
-      <!--<hr class="featurette-divider">
-
-      <div class="featurette" id="faune">
-        <img class="featurette-image img-circle img-responsive pull-right" src="{{url_for('static', filename='custom/images/09-faune.jpg') }}">
-        <h2 class="featurette-heading">Faune sauvage.<br /><span class="text-muted">Grandes et petites bêtes.</span>
-        </h2>
-        <p class="lead">
-          A quelques surprises près toujours possibles, la faune des vertébrés est aujourd'hui bien identifiée dans le Parc national des Écrins.
-          Il s'agit des mammifères, oiseaux, reptiles et amphibiens.
-        </p>
-        <p class="lead">
-          Il n'en va pas de même pour la faune des invertébrés. Il s'agit de ces étranges petites bêtes que sont les insectes, les escargots, les millepattes ou encore les araignées, coléoptères et écrevisses... Une quantité d'espèces aussi
-          impressionnante que pleine de promesses scientifiques.
-        </p>
-        <p class="lead">
-          <i>
-            « La base de données du Parc national n'est pas un inventaire.
-            Elle rassemble des informations collectées dans le cadre de différents protocoles scientifiques avec des objectifs différents.
-            De fait, le nombre important d'observations de bouquetins ne veut pas dire qu'il s'agit de l'espèce la plus présente dans le massif mais bien d'une espèces très suivie, notamment dans le cadre des réintroductions ! »
-          </i>
-        </p>
-        <p class="lead">
-          - Ludovic Imberdis, chargé de mission « faune » au Parc national des Écrins
-        </p>
-        <p class="lead">
-          Pour en savoir plus : <a href="http://www.ecrins-parcnational.fr/thematique/faune-sauvage" target="_blank">http://www.ecrins-parcnational.fr/thematique/faune-sauvage</a>.
-        </p>
-      </div>
-
-
-      <hr class="featurette-divider">-->
 
     </div>
 
+    {% if configuration.AFFICHAGE_FOOTER %}
+      {% include 'static/custom/templates/footer.html' %}
+    {% endif %}
 
-  </div>
+    <script type="text/javascript">
+      var configuration = {{configuration|tojson}};
+    </script>
 
-  {% if configuration.AFFICHAGE_FOOTER %}
-  {% include 'static/custom/templates/footer.html' %}
-  {% endif %}
-
-  <script type="text/javascript">
-    var configuration = {
-      {
-        configuration | tojson
-      }
-    };
-  </script>
-
-  <script src="{{url_for('static', filename='main.js') }}"></script>
-
-</body>
-
+    <script src="{{url_for('static', filename='main.js') }}"></script>
+  </body>
 </html>
