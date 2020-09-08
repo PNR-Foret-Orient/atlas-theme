@@ -23,3 +23,10 @@ body {
   font-size: inherit;
   line-height: inherit;
 }
+#sideBar {
+  margin-top: 0;
+}
+.btn-primary {
+  background-color: #95579a;
+  border-color: #c674cd;
+}
