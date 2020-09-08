@@ -32,14 +32,8 @@
     {% include 'templates/sideBar.html' %}
   </div>
   <div class="container-fluid" id="page">
-    <h1>Voilà la carte</h1>
-    <!-- à faire -->
-
+    <iframe src="/atlas/static/custom/templates/map/index.html" width="100%" height="100%" frameborder="0" allowtransparency="true"></iframe>
   </div>
-
-  {% if configuration.AFFICHAGE_FOOTER %}
-  {% include 'static/custom/templates/footer.html' %}
-  {% endif %}
 
   <script type="text/javascript">
     var configuration = {
